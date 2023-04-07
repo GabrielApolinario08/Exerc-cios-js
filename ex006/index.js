@@ -1,0 +1,11 @@
+let n1 = prompt('Diga um número: ')
+let n2 = prompt('Diga outro número: ')
+n1 = parseFloat(n1)
+n2 = parseFloat(n2)
+
+console.log(`Os números digitados foram ${n1} e ${n2}`)
+console.log(`A soma dos números ${n1} e ${n2} é ${n1 + n2}`)
+console.log(`A subtração dos números ${n1} e ${n2} é ${n1 - n2}`)
+console.log(`A multiplcação dos números ${n1} e ${n2} é ${n1 * n2}`)
+console.log(`A divisão dos números ${n1} e ${n2} é ${n1 / n2}`)
+console.log(`A média dos números ${n1} e ${n2} é ${(n1 + n2) / 2}`)
