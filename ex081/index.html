@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        th {
+            text-align: center;
+            width: 20%;
+            padding: 1rem;
+      
+        }
+
+        td {
+            padding: 10px 0;
+            width: 20%;
+            text-align: center;
+       
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            justify-content: space-between;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        form {
+            width: 50%;
+           
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .linha {
+            display: flex;
+        }
+
+        .divLabel {
+            padding: 5px;
+            width: 50%;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            font-size: 17px;
+            padding: 3px 0;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+
+        input:focus {
+            border-bottom: 1px solid black;
+            outline: 0;
+        }
+
+        #botao {
+            margin: 10px 0;
+            padding: 5px 20px;
+            font-size: 17px;
+            background-color: #ccc;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0 70px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registro de pessoas</h1>
+    <div class="container">
+        <form>
+            <div class="linha">
+                <div class="divLabel">
+                    <label for="nome">Nome</label><br>
+                    <input type="text" id="nome"><br><br>
+                </div>
+
+
+                <div class="divLabel">
+                    <label for="idade">Idade</label><br>
+                    <input type="number" id="idade"><br><br>
+                </div>
+            </div>
+
+            <div class="linha">
+                <div class="divLabel">
+                    <label for="peso">Peso</label><br>
+                    <input type="number" id="peso"><br><br>
+                </div>
+                <div class="divLabel">
+                    <label for="altura">Altura</label><br>
+                    <input type="number" id="altura"><br><br>
+                </div>
+            </div>
+
+            <button id="botao">Inserir</button>
+        </form>
+
+        <div>
+            <table border="2" id="res">
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>Maiores de 18</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
