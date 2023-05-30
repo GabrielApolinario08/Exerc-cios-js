@@ -1,75 +1,65 @@
-const btn = document.querySelector('#botao')
-const res = document.querySelector('#res')
-let numbers = []
-
-function inserindo() {
-    let num = parseFloat(document.querySelector('#numero').value)
+let number = document.querySelector('#num')
+let btn = document.querySelector('#botao')
+let res = document.querySelector('#res')
+let arr = []
+function calculando() {
     if(validando()) {
-        numbers.push(num)
-        mostrandoTodos()
-        limpando()
-        soma(numbers)
-        quantidadeDeNumeros(numbers)
-        media(numbers)
-        mediaPares(numbers)
+        inserindo()
+        somando()
+        QuantidadeDeNumeros()
+        media()
+        mediaPares()
+        clear()
     }
     
 }
-
 function validando() {
-    let num = document.querySelector('#numero')
-    if(num.value == '') {
+    if(number.value == '') {
         alert('ERRO - Insira um valor!')
         return false
     }
     return true
 }
 
-function mostrandoTodos() {
-    res.innerHTML = `Todos os números:`
-    for(let i = 0 ; i < numbers.length ; i++) {
-        res.innerHTML += ` ${numbers[i]} |`
-    }
+function inserindo() {
+    arr.push(number.value)
+    res.innerHTML = `<strong>Todos os números digitados:</strong> ${arr.join(' - ')}<br>`
 }
 
-function limpando() {
-    document.querySelector('#numero').value = ''
-    document.querySelector('#numero').focus()
-}
-
-function soma(arr) {
-    let soma = 0
-    res.innerHTML += `<br>`
-    res.innerHTML += `Soma de todos os números: `
-    for(let i = 0 ; i < arr.length ; i++) {
-        soma = soma + arr[i]
-    }
-    res.innerHTML += `${soma} <br>`
-}
-
-function quantidadeDeNumeros(arr) {
-    res.innerHTML += `Quantidade de números digitados: ${arr.length} <br>`
-}
-
-function media(arr) {
+function somando() {
     let soma = 0
     for(let i = 0 ; i < arr.length ; i++) {
-        soma = soma + arr[i]
+        soma = soma + parseInt(arr[i])
     }
-    res.innerHTML += `Media: ${(soma / arr.length).toFixed(0)} <br>`
+    res.innerHTML += `<strong>Soma de todos os números digitados:</strong> ${soma}<br>`
+    return soma
 }
 
-function mediaPares(arr) {
-    let soma = 0
-    let numPar = 0
+function QuantidadeDeNumeros() {
+    res.innerHTML += `<strong>Quantidade de números digitados:</strong> ${arr.length}<br>`
+}
 
+function media() {
+    let med = 0
+    med = somando() / arr.length
+    res.innerHTML += `<strong>Média dos números digitados:</strong> ${med.toFixed(2)}<br>`
+}
+
+function mediaPares() {
+    let somaPar = 0
+    let quantidadeDePares = 0
     for(let i = 0 ; i < arr.length ; i++) {
         if(arr[i] % 2 == 0) {
-            soma = soma + arr[i]
-            numPar += 1
-        } 
+            somaPar = somaPar + parseInt(arr[i])
+            quantidadeDePares++
+        }
     }
-    res.innerHTML += `Média dos números pares: ${(soma / numPar).toFixed(0)}`
+
+    res.innerHTML += (quantidadeDePares > 0) ? `<strong>Média dos números pares digitados:</strong> ${(somaPar / quantidadeDePares).toFixed(2)}<br>` : ''
 }
 
-btn.addEventListener('click', inserindo)
+function clear() {
+    number.value = ''
+    number.focus()
+}
+btn.addEventListener('click', calculando)

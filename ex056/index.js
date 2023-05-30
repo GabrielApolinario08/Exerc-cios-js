@@ -1,24 +1,20 @@
-let btn = document.querySelector('#botao')
 let res = document.querySelector('#res')
-let arrNumbers = []
-let cont = 0
-function somando() {
-    inserindo()
-    let soma = 0
-    for(let i = 0 ; i < arrNumbers.length ; i++) {
-        soma = soma + arrNumbers[i]
+let arr = []
+let soma = 0
+let cont = 1
+
+while(cont <= 1000) {
+    if(cont % 5 == 0 && cont % 3 == 0) {
+        arr.push(cont)
     }
-    res.innerHTML = `Multiplos de 3 e de 5 entre 0 e 1000:<br> ${arrNumbers.join(' - ')} <br><br>`
-    res.innerHTML += `Soma desses números: ${soma}`
+    cont ++
 }
 
-function inserindo() {
-    while(cont <= 1000) {
-        if(cont % 3 == 0 && cont % 5 == 0) {
-            arrNumbers.push(cont)
-        }
-        cont++
-    }
+for(let i = 0 ; i < arr.length ; i++) {
+    soma = soma + arr[i]
 }
 
-btn.addEventListener('click', somando)
+res.innerHTML = `Todos os números múltiplos de 3 e 5 abaixo de 1000:<br> ${arr.join(' - ')}<br><br>`
+res.innerHTML += `Soma dos números acima: ${soma}`
+console.log(arr)
+console.log(soma)

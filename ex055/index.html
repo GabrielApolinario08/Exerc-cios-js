@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ex55</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Recebendo varios números e calculando</h1>
+    <div class="container">
+        <h1 class="display-2 text-primary py-5">Receba varios números e calcule</h1>
 
-    <label>Digite um número:</label><br>
-    <input type="number" id="numero"><br><br>
-    <button id="botao">Calcular</button>
+        <label class="display-6" for="num">Digite um número:</label><br>
+        <input class="form-control w-25" type="number" id="num">
+        <button class="btn btn-primary px-5 fs-4 my-5" id="botao">Inserir</button>
 
-    <div id="res">
-    
+        <div id="res" class=" p-2 display-6 fs-3"></div>
     </div>
-
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
